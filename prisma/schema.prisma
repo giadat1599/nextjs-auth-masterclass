@@ -43,7 +43,7 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
-model VertificationToken {
+model VerificationToken {
   id        String @id @default(cuid())
   email     String
   token     String @unique
