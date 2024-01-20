@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
+import { Toaster } from "@/components/ui/sonner";
 
 import { auth } from "@/auth";
 import "./globals.css";
@@ -19,7 +20,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <SessionProvider session={session}>
          <html lang="en">
             <body className={inter.className}>
-               {children} <ProgressBar />
+               {children}
+               <ProgressBar />
+               <Toaster />
             </body>
          </html>
       </SessionProvider>
